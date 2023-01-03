@@ -14,4 +14,4 @@ jobs:
       - name: Checking output of known hosts
         run: cat ~/.ssh/known_hosts
       - name: Deploy with rsync
-        run: rsync -avz ./dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/root/personal_portfolio-project
+        run: rsync -avz ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/root/personal_portfolio-project
