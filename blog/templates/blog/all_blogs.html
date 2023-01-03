@@ -1,0 +1,23 @@
+{% extends "portfolio/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<h1 id="blogtitle" class="font-weight-bold text-center">Blog</h1>
+
+<h3 class="text-center mb-5">Luke has written {{ blog_previews.count }} blog{{ blog_previews.count|pluralize }}</h3>
+
+{% for blog_preview in blog_previews %}
+<div class="row justify-content-center my-3">
+  <div class="col-md-10">
+    <a href="{% url 'blog:detail' blog_preview.id %}">
+      <h2>{{ blog_preview.title }}</h2>
+    </a>
+    <h5 class="text-muted">{{ blog_preview.date|date:'M d Y'|upper }}</h5>
+    <h4>{{ blog_preview.content|striptags|truncatechars:100 }}</h4>
+  </div>
+</div>
+{% endfor %}
+
+{% endblock %}
