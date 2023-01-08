@@ -1,6 +1,7 @@
 *.py[cod]
 *.log
 *.pot
-__pycache__
-db.sqlite3
-media
+lukecollins.dev/__pycache__
+lukecollins.dev/db.sqlite3
+lukecollins.dev/media
+lukecollins.dev/static
